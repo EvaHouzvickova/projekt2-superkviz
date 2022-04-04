@@ -25,9 +25,17 @@ odpovedi.appendChild(odpoved1);
 odpovedi.appendChild(odpoved2);
 odpovedi.appendChild(odpoved3);
 
-// Tato funkce se postará o vygenerování otázky
+let i = 0;
+
 // Zavoláme ji jednou na začátku a poté vždy po odpovězení
-function zobrazOtazku() {}
+function zobrazOtazku() {
+    poradi.innerHTML = poleOtazek[i].poradiOtazky;
+    foto.src = poleOtazek[i].obrazek;
+    otazka.innerHTML = poleOtazek[i].otazka;
+    odpoved1.innerHTML = poleOtazek[i].odpoved1;
+    odpoved2.innerHTML = poleOtazek[i].odpoved2;
+    odpoved3.innerHTML = poleOtazek[i].odpoved3;
+}
 
 // Funkce se postará o obsluhu kliknutí na odpověď
 // Musíme ji navázat na kokrétní odpovědi každé otázky (to uděláme v rámci funkce zobrazOtazku())
