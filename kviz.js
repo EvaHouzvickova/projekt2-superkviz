@@ -16,7 +16,8 @@ let obrazek = document.querySelector('#obrazek');
 let moznostiOdpovedi = document.querySelector('#moznosti');
 let odpovedi = document.querySelector('#odpovedi');
 let vysledek = document.querySelector('#vysledek');
-let hodoceni = document.querySelector('#hodnoceni');
+let hodnoceni = document.querySelector('#hodnoceni');
+
 
 
 // Dále budeš potřebovat další proměnné - jaké?
