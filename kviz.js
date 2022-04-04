@@ -1,4 +1,3 @@
-// Nejdříve si vytvoř objekt, který bude držet voje super otázky :-)
 
 let poleOtazek = [
     { poradiOtazky: '1/4', obrazek: 'obrazky/moncicak.jpg', otazka:'Které letiště bylo hlavní pražské letiště, než bylo v roce 1937 otevřeno Letiště Ruzyně?', odpoved1: 'Letiště v Letňanech', odpoved2: 'Letiště v Kbelích', odpoved3: 'Letiště ve Strašnicích'}, 
@@ -13,15 +12,18 @@ let otazka = document.querySelector('#otazka');
 let obsah = document.querySelector('#obsah');
 let foto = document.querySelector('#foto');
 let obrazek = document.querySelector('#obrazek');
-let moznostiOdpovedi = document.querySelector('#moznosti');
+let moznosti = document.querySelector('#moznosti');
 let odpovedi = document.querySelector('#odpovedi');
 let vysledek = document.querySelector('#vysledek');
 let hodnoceni = document.querySelector('#hodnoceni');
 
+let odpoved1 = document.createElement('li')
+let odpoved2 = document.createElement('li')
+let odpoved3 = document.createElement('li')
 
-
-// Dále budeš potřebovat další proměnné - jaké?
-
+odpovedi.appendChild(odpoved1);
+odpovedi.appendChild(odpoved2);
+odpovedi.appendChild(odpoved3);
 
 // Tato funkce se postará o vygenerování otázky
 // Zavoláme ji jednou na začátku a poté vždy po odpovězení

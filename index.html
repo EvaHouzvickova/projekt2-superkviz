@@ -10,10 +10,10 @@
 </head>
 <body>
 	<!--HTML i CSS můžeš kdykoliv měnit podle potřeby!-->
-	<h1>Superkvíz</h1>
+	<h1>Superkvíz - jak dobře znáte Prahu</h1>
 
 	<!--Tento DIV obaluje celý kvíz, můžeš jej v JS použít jako hlavní element, na který se odkážeš-->
-	<div class="kviz">
+	<div id="kviz" class="kviz">
 
 		<!--Sem můžeš zapsat pořadí otázky. opět pomocí JS-->
 		<p id="poradi"></p>
@@ -22,8 +22,8 @@
 		<h2 id="otazka"></h2>
 
 		<!--Toto je ukázka případné struktury - rovnou to nahraď podobnou strukturou reálné otázky pomocí JS-->
-		<div class="obsah">
-			<div class="foto">
+		<div id="obsah" class="obsah">
+			<div id="foto" class="foto">
 				<img id="obrazek" src="obrazky/snehurka.jpg" alt="Ilustrační obrázek">
 			</div>
 
@@ -35,11 +35,10 @@
 	</div>
 
 	<!--A nakonci bude tady výsledek - nejdřív vidět není a poté ano. U otázek je to opačně.-->
-	<div class="vysledek">
+	<div id="vysledek" class="vysledek">
 		<h2>Tvoje hodnocení</h2>
 		<div id="hodnoceni"></div>
 	</div>
-
 
 	<script src="kviz.js"></script>
 
