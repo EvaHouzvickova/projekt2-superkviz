@@ -7,6 +7,18 @@ let poleOtazek = [
     { poradiOtazky: '4/4', obrazek: 'obrazky/moncicak.jpg', otazka:'Poznáte sídliště na obrázku?', odpoved1: 'Černý Most', odpoved2: 'Lužiny', odpoved3: 'Barrandovské'}
 ]
 
+let kviz = document.querySelector('#kviz');
+let poradi = document.querySelector('#poradi');
+let otazka = document.querySelector('#otazka');
+let obsah = document.querySelector('#obsah');
+let foto = document.querySelector('#foto');
+let obrazek = document.querySelector('#obrazek');
+let moznostiOdpovedi = document.querySelector('#moznosti');
+let odpovedi = document.querySelector('#odpovedi');
+let vysledek = document.querySelector('#vysledek');
+let hodoceni = document.querySelector('#hodnoceni');
+
+
 // Dále budeš potřebovat další proměnné - jaké?
 
 
