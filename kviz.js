@@ -25,6 +25,7 @@ odpovedi.appendChild(odpoved1);
 odpovedi.appendChild(odpoved2);
 odpovedi.appendChild(odpoved3);
 
+
 let i = 0;
 
 function zobrazOtazku() {
@@ -41,12 +42,19 @@ const tlacitkaOdpovedi = document.querySelectorAll('li');
 tlacitkaOdpovedi.addEventListener('click', klikNaOdpoved);
 
 function klikNaOdpoved() {
-    i=i+1;
+    if(i+1 < poleOtazek.length) {
+    i++;
     zobrazOtazku();
+    }
+    else {
+    zobrazVyhodnoceni()
+    }
 }
-
 
 // Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
 // Vypočítám skóre a nageneruje nové elementy do HTML
 // Touto funkcí končí můj program (budu se rozhodovat, zda ji zavolat v rámci klikNaOdpoved())
-function zobrazVyhodnoceni() { }
+function zobrazVyhodnoceni() { 
+    kviz.style.display = 'none';
+    vysledek.style.display = 'block';
+}
