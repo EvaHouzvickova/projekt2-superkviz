@@ -17,14 +17,9 @@ let odpovedi = document.querySelector('#odpovedi');
 let vysledek = document.querySelector('#vysledek');
 let hodnoceni = document.querySelector('#hodnoceni');
 
-let odpoved1 = document.createElement('li')
-let odpoved2 = document.createElement('li')
-let odpoved3 = document.createElement('li')
-
-odpovedi.appendChild(odpoved1);
-odpovedi.appendChild(odpoved2);
-odpovedi.appendChild(odpoved3);
-
+let odpoved0 = document.querySelector('#odpoved0');
+let odpoved1 = document.querySelector('#odpoved1');
+let odpoved2 = document.querySelector('#odpoved2');
 
 let i = 0;
 
@@ -32,9 +27,9 @@ function zobrazOtazku() {
     poradi.innerHTML = poleOtazek[i].poradiOtazky;
     foto.src = poleOtazek[i].obrazek;
     otazka.innerHTML = poleOtazek[i].otazka;
-    odpoved1.innerHTML = poleOtazek[i].odpoved1;
-    odpoved2.innerHTML = poleOtazek[i].odpoved2;
-    odpoved3.innerHTML = poleOtazek[i].odpoved3;
+    odpoved0.innerHTML = poleOtazek[i].odpoved1;
+    odpoved1.innerHTML = poleOtazek[i].odpoved2;
+    odpoved2.innerHTML = poleOtazek[i].odpoved3;
 }
 
 const tlacitkaOdpovedi = document.querySelectorAll('li');
