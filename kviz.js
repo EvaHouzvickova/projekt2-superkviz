@@ -42,15 +42,15 @@ tlacitkaOdpovedi.forEach((tlacitko) => {
 });
 
 function klikNaOdpoved(e) {
-    console.log(e.target);
+    console.log(e.target.dataset.odpoved);
 
-    if(odpoved0.dataset.odpoved == 0) {
+    if(e.target.dataset.odpoved == 0) {
         poleOdpovedi.push(poleOtazek[i].odpoved1)
     }
-    else if ((odpoved1.dataset.odpoved == 1)) {
+    else if (e.target.dataset.odpoved == 1) {
         poleOdpovedi.push(poleOtazek[i].odpoved2)
     }
-    else if ((odpoved2.dataset.odpoved == 2)) {
+    else if (e.target.dataset.odpoved == 2) {
         poleOdpovedi.push(poleOtazek[i].odpoved3)
     }
 
@@ -66,7 +66,6 @@ function klikNaOdpoved(e) {
     zobrazVyhodnoceni()
     }
 }
-
 
 // Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
 // Vypočítám skóre a nageneruje nové elementy do HTML
