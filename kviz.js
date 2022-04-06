@@ -21,6 +21,9 @@ let odpoved0 = document.querySelector('#odpoved0');
 let odpoved1 = document.querySelector('#odpoved1');
 let odpoved2 = document.querySelector('#odpoved2');
 
+let poleOdpovedi = [];
+let spravnychOdpovedi = [];
+
 let i = 0;
 
 function zobrazOtazku() {
@@ -37,6 +40,16 @@ const tlacitkaOdpovedi = document.querySelectorAll('li');
 tlacitkaOdpovedi.addEventListener('click', klikNaOdpoved);
 
 function klikNaOdpoved() {
+    if(odpoved0.dataset.odpoved == 0) {
+        poleOdpovedi.push(poleOtazek[i].odpoved1)
+    }
+    else if ((odpoved1.dataset.odpoved == 1)) {
+        poleOdpovedi.push(poleOtazek[i].odpoved2)
+    }
+    else if ((odpoved2.dataset.odpoved == 2)) {
+        poleOdpovedi.push(poleOtazek[i].odpoved3)
+    }
+    
     if(i+1 < poleOtazek.length) {
     i++;
     zobrazOtazku();
@@ -45,6 +58,7 @@ function klikNaOdpoved() {
     zobrazVyhodnoceni()
     }
 }
+
 
 // Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
 // Vypočítám skóre a nageneruje nové elementy do HTML
