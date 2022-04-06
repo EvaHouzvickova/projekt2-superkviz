@@ -73,4 +73,5 @@ function klikNaOdpoved(e) {
 function zobrazVyhodnoceni() { 
     kviz.style.display = 'none';
     vysledek.style.display = 'block';
+    
 }
