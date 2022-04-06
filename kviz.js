@@ -22,7 +22,7 @@ let odpoved1 = document.querySelector('#odpoved1');
 let odpoved2 = document.querySelector('#odpoved2');
 
 let poleOdpovedi = [];
-let spravnychOdpovedi = [];
+let pocetSpravnychOdpovedi = 0;
 
 let i = 0;
 
@@ -37,9 +37,13 @@ function zobrazOtazku() {
 
 const tlacitkaOdpovedi = document.querySelectorAll('li');
 
-tlacitkaOdpovedi.addEventListener('click', klikNaOdpoved);
+tlacitkaOdpovedi.forEach((tlacitko) => {
+    tlacitko.addEventListener('click', klikNaOdpoved);
+});
 
-function klikNaOdpoved() {
+function klikNaOdpoved(e) {
+    console.log(e.target);
+
     if(odpoved0.dataset.odpoved == 0) {
         poleOdpovedi.push(poleOtazek[i].odpoved1)
     }
@@ -49,7 +53,11 @@ function klikNaOdpoved() {
     else if ((odpoved2.dataset.odpoved == 2)) {
         poleOdpovedi.push(poleOtazek[i].odpoved3)
     }
-    
+
+    if (poleOdpovedi[i] == poleOtazek[i].spravnaOdpoved) {
+        pocetSpravnychOdpovedi = pocetSpravnychOdpovedi + 1;
+    }
+
     if(i+1 < poleOtazek.length) {
     i++;
     zobrazOtazku();
