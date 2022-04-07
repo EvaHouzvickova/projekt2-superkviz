@@ -21,6 +21,30 @@ let odpoved0 = document.querySelector('#odpoved0');
 let odpoved1 = document.querySelector('#odpoved1');
 let odpoved2 = document.querySelector('#odpoved2');
 
+let otazka1Vyhodnoceni = document.createElement('h3');
+hodnoceni.appendChild(otazka1Vyhodnoceni);
+let text1Vyhodnoceni = document.createElement('p');
+hodnoceni.appendChild(text1Vyhodnoceni);
+
+let otazka2Vyhodnoceni = document.createElement('h3');
+hodnoceni.appendChild(otazka2Vyhodnoceni);
+let text2Vyhodnoceni = document.createElement('p');
+hodnoceni.appendChild(text2Vyhodnoceni);
+
+let otazka3Vyhodnoceni = document.createElement('h3');
+hodnoceni.appendChild(otazka3Vyhodnoceni);
+let text3Vyhodnoceni = document.createElement('p');
+hodnoceni.appendChild(text3Vyhodnoceni);
+
+let otazka4Vyhodnoceni = document.createElement('h3');
+hodnoceni.appendChild(otazka4Vyhodnoceni);
+let text4Vyhodnoceni = document.createElement('p');
+hodnoceni.appendChild(text4Vyhodnoceni);
+
+let sumarizaceUspesnosti = document.createElement('h2');
+hodnoceni.appendChild(sumarizaceUspesnosti);
+
+
 let poleOdpovedi = [];
 let pocetSpravnychOdpovedi = 0;
 
@@ -67,11 +91,39 @@ function klikNaOdpoved(e) {
     }
 }
 
-// Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
-// Vypočítám skóre a nageneruje nové elementy do HTML
-// Touto funkcí končí můj program (budu se rozhodovat, zda ji zavolat v rámci klikNaOdpoved())
 function zobrazVyhodnoceni() { 
     kviz.style.display = 'none';
     vysledek.style.display = 'block';
-    
+    otazka1Vyhodnoceni.innerHTML = poleOtazek[0].otazka;
+    otazka2Vyhodnoceni.innerHTML = poleOtazek[1].otazka;
+    otazka3Vyhodnoceni.innerHTML = poleOtazek[2].otazka;
+    otazka4Vyhodnoceni.innerHTML = poleOtazek[3].otazka;
+
+    if (poleOdpovedi[0] == poleOtazek[0].spravnaOdpoved) {
+        text1Vyhodnoceni.innerHTML = 'Tvoje odpověď: ' + poleOdpovedi[0] + '.' + '<br>To je správně.';
+    }
+    else {
+        text1Vyhodnoceni.innerHTML = 'Tvoje odpověď: ' + poleOdpovedi[0] + '.' + '<br>Správná odpověď je: ' + poleOtazek[0].spravnaOdpoved;
+    }
+    if (poleOdpovedi[1] == poleOtazek[1].spravnaOdpoved) {
+        text2Vyhodnoceni.innerHTML = 'Tvoje odpověď: ' + poleOdpovedi[1] + '.' + '<br>To je správně.';
+    }
+    else {
+        text2Vyhodnoceni.innerHTML = 'Tvoje odpověď: ' + poleOdpovedi[1] + '.' + '<br>Správná odpověď je: ' + poleOtazek[1].spravnaOdpoved;
+    }
+    if (poleOdpovedi[2] == poleOtazek[2].spravnaOdpoved) {
+        text3Vyhodnoceni.innerHTML = 'Tvoje odpověď: ' + poleOdpovedi[2] + '.' + '<br>To je správně.';
+    }
+    else {
+        text3Vyhodnoceni.innerHTML = 'Tvoje odpověď: ' + poleOdpovedi[2] + '.' + '<br>Správná odpověď je: ' + poleOtazek[2].spravnaOdpoved;
+    }
+    if (poleOdpovedi[3] == poleOtazek[3].spravnaOdpoved) {
+        text4Vyhodnoceni.innerHTML = 'Tvoje odpověď: ' + poleOdpovedi[3] + '.' + '<br>To je správně.';
+    }
+    else {
+        text4Vyhodnoceni.innerHTML = 'Tvoje odpověď: ' + poleOdpovedi[3] + '.' + '<br>Správná odpověď je: ' + poleOtazek[3].spravnaOdpoved;
+    }
+
+    let skore = (pocetSpravnychOdpovedi/poleOtazek.length)*100;
+    sumarizaceUspesnosti.innerHTML = 'Správně ' + pocetSpravnychOdpovedi + ' ze ' + poleOtazek.length + ' otázek. Úspěšnost je ' + skore + ' %.';
 }
