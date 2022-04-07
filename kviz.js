@@ -1,9 +1,9 @@
 
 let poleOtazek = [
-    { poradiOtazky: '1/4', obrazek: 'obrazky/moncicak.jpg', otazka: 'Které letiště bylo hlavní pražské letiště, než bylo v roce 1937 otevřeno Letiště Ruzyně?', odpoved1: 'Letiště v Letňanech', odpoved2: 'Letiště v Kbelích', odpoved3: 'Letiště ve Strašnicích', spravnaOdpoved:'Letiště v Kbelích' },
-    { poradiOtazky: '2/4', obrazek: 'obrazky/moncicak.jpg', otazka: 'Ve kterém objektu byl pořízen snímek?', odpoved1: 'Čistírna odpadních vod Bubeneč', odpoved2: 'Pivovar Braník', odpoved3: 'Podolská vodárna', spravnaOdpoved:'Podolská vodárna'},
-    { poradiOtazky: '3/4', obrazek: 'obrazky/moncicak.jpg', otazka: 'Víte jak je vysoká velká bronzová socha jezdecká socha Jana Žižky na Vítkově?', odpoved1: '6 metrů', odpoved2: '12 metrů', odpoved3: '9 metrů', spravnaOdpoved:'9 metrů'},
-    { poradiOtazky: '4/4', obrazek: 'obrazky/moncicak.jpg', otazka: 'Poznáte sídliště na obrázku?', odpoved1: 'Černý Most', odpoved2: 'Lužiny', odpoved3: 'Barrandovské', spravnaOdpoved:'Barrandovské'}
+    { poradiOtazky: '1/4', obrazek: 'obrazky/let.jpg', otazka: 'Které letiště bylo hlavní pražské letiště, než bylo v roce 1937 otevřeno Letiště Ruzyně?', odpoved1: 'Letiště v Letňanech', odpoved2: 'Letiště v Kbelích', odpoved3: 'Letiště ve Strašnicích', spravnaOdpoved: 'Letiště v Kbelích' },
+    { poradiOtazky: '2/4', obrazek: 'obrazky/vod.jpg', otazka: 'Ve kterém objektu byl pořízen snímek?', odpoved1: 'Čistírna odpadních vod Bubeneč', odpoved2: 'Pivovar Braník', odpoved3: 'Podolská vodárna', spravnaOdpoved: 'Podolská vodárna' },
+    { poradiOtazky: '3/4', obrazek: 'obrazky/ziz.jpg', otazka: 'Víte jak je vysoká velká bronzová socha jezdecká socha Jana Žižky na Vítkově?', odpoved1: '6 metrů', odpoved2: '12 metrů', odpoved3: '9 metrů', spravnaOdpoved: '9 metrů' },
+    { poradiOtazky: '4/4', obrazek: 'obrazky/barr.jpg', otazka: 'Poznáte sídliště na obrázku?', odpoved1: 'Černý Most', odpoved2: 'Lužiny', odpoved3: 'Barrandovské', spravnaOdpoved: 'Barrandovské' }
 ]
 
 let kviz = document.querySelector('#kviz');
@@ -52,7 +52,7 @@ let i = 0;
 
 function zobrazOtazku() {
     poradi.innerHTML = poleOtazek[i].poradiOtazky;
-    foto.src = poleOtazek[i].obrazek;
+    obrazek.src = poleOtazek[i].obrazek;
     otazka.innerHTML = poleOtazek[i].otazka;
     odpoved0.innerHTML = poleOtazek[i].odpoved1;
     odpoved1.innerHTML = poleOtazek[i].odpoved2;
@@ -68,7 +68,7 @@ tlacitkaOdpovedi.forEach((tlacitko) => {
 function klikNaOdpoved(e) {
     console.log(e.target.dataset.odpoved);
 
-    if(e.target.dataset.odpoved == 0) {
+    if (e.target.dataset.odpoved == 0) {
         poleOdpovedi.push(poleOtazek[i].odpoved1)
     }
     else if (e.target.dataset.odpoved == 1) {
@@ -82,16 +82,16 @@ function klikNaOdpoved(e) {
         pocetSpravnychOdpovedi = pocetSpravnychOdpovedi + 1;
     }
 
-    if(i+1 < poleOtazek.length) {
-    i++;
-    zobrazOtazku();
+    if (i + 1 < poleOtazek.length) {
+        i++;
+        zobrazOtazku();
     }
     else {
-    zobrazVyhodnoceni()
+        zobrazVyhodnoceni()
     }
 }
 
-function zobrazVyhodnoceni() { 
+function zobrazVyhodnoceni() {
     kviz.style.display = 'none';
     vysledek.style.display = 'block';
     otazka1Vyhodnoceni.innerHTML = poleOtazek[0].otazka;
@@ -124,6 +124,6 @@ function zobrazVyhodnoceni() {
         text4Vyhodnoceni.innerHTML = 'Tvoje odpověď: ' + poleOdpovedi[3] + '.' + '<br>Správná odpověď je: ' + poleOtazek[3].spravnaOdpoved;
     }
 
-    let skore = (pocetSpravnychOdpovedi/poleOtazek.length)*100;
+    let skore = (pocetSpravnychOdpovedi / poleOtazek.length) * 100;
     sumarizaceUspesnosti.innerHTML = 'Správně ' + pocetSpravnychOdpovedi + ' ze ' + poleOtazek.length + ' otázek. Úspěšnost je ' + skore + ' %.';
 }
