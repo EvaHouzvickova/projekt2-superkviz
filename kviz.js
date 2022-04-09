@@ -2,18 +2,14 @@
 let poleOtazek = [
     { poradiOtazky: '1/4', obrazek: 'obrazky/let.jpg', otazka: 'Které letiště bylo hlavní pražské letiště, než bylo v roce 1937 otevřeno Letiště Ruzyně?', odpoved1: 'Letiště v Letňanech', odpoved2: 'Letiště v Kbelích', odpoved3: 'Letiště ve Strašnicích', spravnaOdpoved: 'Letiště v Kbelích' },
     { poradiOtazky: '2/4', obrazek: 'obrazky/vod.jpg', otazka: 'Ve kterém objektu byl pořízen snímek?', odpoved1: 'Čistírna odpadních vod Bubeneč', odpoved2: 'Pivovar Braník', odpoved3: 'Podolská vodárna', spravnaOdpoved: 'Podolská vodárna' },
-    { poradiOtazky: '3/4', obrazek: 'obrazky/ziz.jpg', otazka: 'Víte jak je vysoká velká bronzová socha jezdecká socha Jana Žižky na Vítkově?', odpoved1: '6 metrů', odpoved2: '12 metrů', odpoved3: '9 metrů', spravnaOdpoved: '9 metrů' },
+    { poradiOtazky: '3/4', obrazek: 'obrazky/ziz.jpg', otazka: 'Víte jak je vysoká velká bronzová jezdecká socha Jana Žižky na Vítkově?', odpoved1: '6 metrů', odpoved2: '12 metrů', odpoved3: '9 metrů', spravnaOdpoved: '9 metrů' },
     { poradiOtazky: '4/4', obrazek: 'obrazky/barr.jpg', otazka: 'Poznáte sídliště na obrázku?', odpoved1: 'Černý Most', odpoved2: 'Lužiny', odpoved3: 'Barrandovské', spravnaOdpoved: 'Barrandovské' }
 ]
 
 let kviz = document.querySelector('#kviz');
 let poradi = document.querySelector('#poradi');
 let otazka = document.querySelector('#otazka');
-let obsah = document.querySelector('#obsah');
-let foto = document.querySelector('#foto');
 let obrazek = document.querySelector('#obrazek');
-let moznosti = document.querySelector('#moznosti');
-let odpovedi = document.querySelector('#odpovedi');
 let vysledek = document.querySelector('#vysledek');
 let hodnoceni = document.querySelector('#hodnoceni');
 
@@ -43,7 +39,6 @@ hodnoceni.appendChild(text4Vyhodnoceni);
 
 let sumarizaceUspesnosti = document.createElement('h2');
 hodnoceni.appendChild(sumarizaceUspesnosti);
-
 
 let poleOdpovedi = [];
 let pocetSpravnychOdpovedi = 0;
